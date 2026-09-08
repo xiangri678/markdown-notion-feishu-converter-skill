@@ -1,4 +1,6 @@
-# Note Transfer Skill
+# Markdown, Notion, and Feishu Converter Skill
+
+[中文](README.zh-CN.md) | English
 
 An Agent Skill for transferring documents among Markdown, Notion, and Feishu while preserving structure, links, source traceability, and verification.
 

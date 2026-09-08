@@ -1,4 +1,4 @@
 interface:
-  display_name: "Note Transfer"
+  display_name: "Markdown, Notion & Feishu Converter"
   short_description: "Move docs across Notion, Feishu, and Markdown"
-  default_prompt: "Transfer this document to the requested format, preserve its structure, and verify the destination by reading it back."
+  default_prompt: "Use $markdown-notion-feishu-converter to transfer this document, preserve its structure, and verify the destination by reading it back."

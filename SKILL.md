@@ -1,5 +1,5 @@
 ---
-name: note-transfer
+name: markdown-notion-feishu-converter
 description: Transfer documents among Markdown files, Notion pages, and Feishu documents while preserving structure, links, and source traceability. Use when copying or converting content between any two of these formats.
 license: MIT
 metadata:
@@ -10,6 +10,8 @@ metadata:
 ---
 
 # Note Transfer
+
+[中文说明](SKILL.zh-CN.md) | English
 
 Use Markdown as the intermediate representation. Copy by default; delete or replace a source only when the user explicitly asks.
 

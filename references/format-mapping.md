@@ -1,5 +1,7 @@
 # Format mapping
 
+[中文](format-mapping.zh-CN.md) | English
+
 Prefer structures that all three formats can represent reliably.
 
 | Content | Markdown | Notion | Feishu |
