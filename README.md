@@ -9,11 +9,14 @@ An Agent Skill for transferring documents among Markdown, Notion, and Feishu whi
 - `SKILL.md`: agent workflow and safety boundaries
 - `scripts/notion_to_markdown.py`: dependency-free Notion block exporter
 - `references/format-mapping.md`: cross-format mapping and known lossy structures
+- `examples/`: sample Markdown, invocation prompts, and verification record
 - `agents/openai.yaml`: UI metadata
 
 ## Use
 
 Install this repository with an Agent Skills-compatible client, or copy the repository into your agent's skills directory. Invoke it when moving or converting a document among the supported formats.
+
+See [`examples/README.md`](examples/README.md) for Markdown-to-Notion, Markdown-to-Feishu, and Notion-to-Markdown examples.
 
 ## Authorship
 

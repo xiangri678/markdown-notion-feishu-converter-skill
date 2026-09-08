@@ -37,3 +37,5 @@ python3 scripts/notion_to_markdown.py PAGE_ID --output-dir ./exported-page
 7. 返回目标 URL 或路径，并列出有意发生的格式损失。
 
 创建接口返回成功不等于转换完成。执行移动时，只有在回读验证成功且用户明确授权后才能删除来源。
+
+可直接复制的请求和闭环验收记录见[使用示例](examples/README.md)。

@@ -10,11 +10,14 @@
 - `SKILL.zh-CN.md`：中文 Skill 说明
 - `scripts/notion_to_markdown.py`：无第三方 Python 依赖的 Notion Block 导出脚本
 - `references/format-mapping.md`：格式映射与无法无损转换的结构
+- `examples/`：示例 Markdown、调用提示和转换验收记录
 - `agents/openai.yaml`：界面元数据
 
 ## 使用
 
 通过兼容 Agent Skills 的客户端安装本仓库，或将仓库复制到 Agent 的 Skills 目录。需要在 Markdown、Notion、飞书三者之间迁移或转换文档时调用。
+
+完整示例见 [`examples/README.md`](examples/README.md)，其中覆盖 Markdown → Notion、Markdown → 飞书和 Notion → Markdown。
 
 ## 作者
 

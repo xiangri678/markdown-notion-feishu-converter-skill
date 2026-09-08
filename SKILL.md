@@ -48,3 +48,5 @@ The exporter writes `page.md` and `summary.json`. Supply credentials through the
 7. Return the destination URL or path and list any intentional losses.
 
 Do not claim success from a create response alone. For a move, delete the source only after read-back verification and explicit authorization.
+
+See [examples/README.md](examples/README.md) for copy-ready requests and an end-to-end verification record.
