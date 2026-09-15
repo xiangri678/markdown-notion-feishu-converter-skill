@@ -9,9 +9,9 @@
 | 来源 | 目标 | 方法 |
 | --- | --- | --- |
 | Notion | Markdown | 使用 `scripts/notion_to_markdown.py` 或已授权的 Notion 客户端导出 Block |
-| Markdown | Notion | 将标题、列表、引用、代码、表格、链接和图片转换为 Notion Block |
-| 飞书 | Markdown | 使用 `lark-cli doc read` 或其他已授权客户端读取文档 |
-| Markdown | 飞书 | 创建文档、导入 Markdown，然后回读验证 |
+| Markdown | Notion | 使用 `scripts/markdown_to_notion.py`，复核预览后传 `--confirm-write` |
+| 飞书 | Markdown | 使用 `scripts/feishu_markdown.py export` 和已授权的 `lark-cli` 身份 |
+| Markdown | 飞书 | 使用 `scripts/feishu_markdown.py import`，复核预览后传 `--confirm-write` |
 | Notion | 飞书 | 先导出 Markdown，规范化后导入飞书 |
 | 飞书 | Notion | 先导出 Markdown，规范化后创建 Notion Block |
 
@@ -25,6 +25,8 @@ python3 scripts/notion_to_markdown.py PAGE_ID --output-dir ./exported-page
 ```
 
 脚本生成 `page.md` 和 `summary.json`。凭据只能来自环境变量或用户已授权的 Connector，不得写入源码、输出文档或日志。
+
+Notion 导入、飞书导入和飞书导出的完整命令见[使用示例](examples/README.md)。Notion 与飞书互转时串联相应的导出和导入命令；写入后重新导出目标文档，并用 `scripts/verify_markdown.py` 与来源比较。
 
 ## 安全转换流程
 

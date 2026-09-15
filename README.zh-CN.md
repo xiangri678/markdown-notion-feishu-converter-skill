@@ -8,7 +8,11 @@
 
 - `SKILL.md`：Agent 工作流程与安全边界
 - `SKILL.zh-CN.md`：中文 Skill 说明
-- `scripts/notion_to_markdown.py`：无第三方 Python 依赖的 Notion Block 导出脚本
+- `scripts/notion_to_markdown.py`：递归导出 Notion Block、表格和嵌套列表
+- `scripts/markdown_to_notion.py`：Markdown 转 Notion Block，支持预览、分批写入和回读
+- `scripts/feishu_markdown.py`：通过当前 `lark-cli` 导入或导出飞书 Markdown
+- `scripts/verify_markdown.py`：对比标题、链接、代码块、表格和列表数量
+- `tests/`：Markdown 解析和格式损失测试
 - `references/format-mapping.md`：格式映射与无法无损转换的结构
 - `examples/`：示例 Markdown、调用提示和转换验收记录
 - `agents/openai.yaml`：界面元数据
@@ -17,11 +21,17 @@
 
 通过兼容 Agent Skills 的客户端安装本仓库，或将仓库复制到 Agent 的 Skills 目录。需要在 Markdown、Notion、飞书三者之间迁移或转换文档时调用。
 
-完整示例见 [`examples/README.md`](examples/README.md)，其中覆盖 Markdown → Notion、Markdown → 飞书和 Notion → Markdown。
+完整示例见 [`examples/README.md`](examples/README.md)，其中给出了六种转换方向的实际命令。Notion 和飞书写入命令默认只显示计划，复核后必须显式传入 `--confirm-write`。
+
+运行离线测试：
+
+```bash
+python3 -m unittest discover -s tests -v
+```
 
 ## 作者
 
-由 Xiangri 根据自己构建的 Hermes Agent 工作流整理。第三方服务和客户端仍遵循各自的条款与许可证。
+根据 Hermes Agent 工作流的实践经验整理。第三方服务和客户端仍遵循各自的条款与许可证。
 
 ## 许可证
 

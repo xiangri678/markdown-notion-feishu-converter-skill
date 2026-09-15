@@ -1,4 +1,4 @@
 interface:
-  display_name: "Markdown, Notion & Feishu Converter"
-  short_description: "Move docs across Notion, Feishu, and Markdown"
-  default_prompt: "Use $markdown-notion-feishu-converter to transfer this document, preserve its structure, and verify the destination by reading it back."
+  display_name: "Markdown、Notion、飞书转换"
+  short_description: "在三种文档格式之间转换并验证结构"
+  default_prompt: "使用 $markdown-notion-feishu-converter 转换这份文档，尽量保留结构和链接，并通过回读目标文档验证结果。"

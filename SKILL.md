@@ -3,8 +3,7 @@ name: markdown-notion-feishu-converter
 description: Transfer documents among Markdown files, Notion pages, and Feishu documents while preserving structure, links, and source traceability. Use when copying or converting content between any two of these formats.
 license: MIT
 metadata:
-  author: Xiangri
-  version: "1.0.0"
+  version: "1.1.0"
   compatibility: Requires Python 3, an authorized Notion client for Notion operations, and lark-cli or another authorized Feishu client for Feishu operations.
   tags: [markdown, notion, feishu, document-conversion]
 ---
@@ -20,9 +19,9 @@ Use Markdown as the intermediate representation. Copy by default; delete or repl
 | Source | Destination | Route |
 | --- | --- | --- |
 | Notion | Markdown | Export blocks with `scripts/notion_to_markdown.py` or an authorized Notion client |
-| Markdown | Notion | Parse headings, lists, quotes, code, tables, links, and images into Notion blocks |
-| Feishu | Markdown | Read the document with `lark-cli doc read` or an equivalent authorized client |
-| Markdown | Feishu | Create a document, import the Markdown, then read it back |
+| Markdown | Notion | Use `scripts/markdown_to_notion.py`; preview before `--confirm-write` |
+| Feishu | Markdown | Use `scripts/feishu_markdown.py export` with an authorized `lark-cli` identity |
+| Markdown | Feishu | Use `scripts/feishu_markdown.py import`; preview before `--confirm-write` |
 | Notion | Feishu | Export to Markdown, normalize, then import |
 | Feishu | Notion | Export to Markdown, normalize, then create Notion blocks |
 
@@ -36,6 +35,8 @@ python3 scripts/notion_to_markdown.py PAGE_ID --output-dir ./exported-page
 ```
 
 The exporter writes `page.md` and `summary.json`. Supply credentials through the environment or the user's authorized connector. Never put tokens in source files, output documents, or logs.
+
+For Notion import and Feishu import/export commands, use [the executable examples](examples/README.md). Chain the corresponding export and import commands for Notion ↔ Feishu. After every write, export the destination again and run `scripts/verify_markdown.py` against the source.
 
 ## Transfer safely
 
